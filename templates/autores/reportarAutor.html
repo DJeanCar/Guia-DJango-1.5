@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Repotar</title>
+</head>
+<body>
+	<h1>Todos los Autores</h1>
+	
+	<ul>
+		{% for autor in autores %}
+			<li><b>Nombre</b> {{autor.nombre}} </li>
+			<li><b>Pais</b> {{autor.pais}} </li>
+			<li><b>Descripcion</b> {{autor.descripcion}} </li>
+			<li><b>Foto</b> <img src="{{MEDIA_URL}}{{autor.foto}}"></li>
+		{% endfor %}
+	</ul>
+
+	
+</body>
+</html>

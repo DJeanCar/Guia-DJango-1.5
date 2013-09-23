@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}
+inicio
+{% endblock %}
+
+{% block content %}
+
+        <div class="row-fluid ">
+
+            <div class="span7">
+              <br><br><br><br>
+
+              <h4 class="alinear1" align="center">Ahora revisa y solicita los libros de tu biblioteca desde tu sistema web COMBOOK, la biblioteca virtual que te facilita adquirir un servicio de tu biblioteca sin que vayas hasta tu institución. ¡Ahora aprende divertidamente utilizando tu sistema web!</h4>
+
+              <br><br><br><br>
+            </div>
+
+            <div class="span5">
+                <div class="row-fluid">
+                  <div class="span2"></div>
+                  <div class="span8 registrar">
+                    <legend align="center">Entrar</legend>
+                    {% if user.is_authenticated %}
+                      Bienvenidooo {{user.username|capfirst}}
+                      <a href="/cerrar/">Salir</a>
+                    {% else %}
+                    <form class="form-horizontal alinear" method="POST">{% csrf_token %}
+                      <div class="control-group">
+                        <label class="control-label" for="inputEmail" >Usuario</label>
+                        <div class="controls">
+                          <input name="username" type="text" id="inputEmail" placeholder="Usuario">
+                        </div>
+                      </div>
+
+                      <div class="control-group">
+                        <label class="control-label" for="inputPassword">Contraseña</label>
+                        <div class="controls">
+                          <input name="password" type="password" id="inputPassword" placeholder="Contraseña">
+                        </div>
+                      </div>
+
+                      <div class="control-group">
+                        <div class="controls">
+                          <label class="checkbox">
+                          <input type="checkbox">Recordar</label>
+                          <button type="submit" class="btn btn-info">Ingresar</button>
+                          <a href="/registrarse/" class="reg">Registrarse</a>
+                        </div>
+                      </div>
+                    </form>
+                    {% endif %}  
+                  </div>  
+                  <div class="span2"></div>
+                </div>
+            </div>
+        </div>
+
+     
+      <div class="row-fluid">
+        <div class="span12">
+          <hr class="medio">
+          <div class="row-fluid s1 medio2">
+            <div class="span3">
+              <img id="margen" width='180px' height='180px' src="{{MEDIA_URL}}img/libro.jpg" align="center" class="img-circle">
+              <br>
+              <br>
+              <h3 class="estilo"><font color="#151515"><strong>COMBOOK</strong></font></h3>
+            </div>
+            <div class="span3">
+              <img id="margen1" width='180px' height='180px' src="{{MEDIA_URL}}img/libro2.jpg" align="center" class="img-circle">
+              <br>
+              <br>
+              <br>
+              <h4 class="estilo1"><font color="#151515"><strong>El sistema web perfecto para tu biblioteca</strong></font></h4>
+            </div>
+            <div class="span3">
+              <img id="margen2" width='180px' height='180px' src="{{MEDIA_URL}}img/libro3.jpg" align="center" class="img-circle">
+            </div>
+            <div class="span3">
+              <img id="margen3" width='400px' height='400px' src="{{MEDIA_URL}}img/alumno.png" align="center">
+            </div>
+          </div>
+          <hr class="medio1">
+        </div>
+      </div>  	
+
+
+{% endblock %}

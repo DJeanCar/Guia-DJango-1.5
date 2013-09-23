@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+ <html lang="es"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="Combook es una biblioteca virtual hecha por qaysen">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/my_stilos.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/main.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/inicio.css">        
+        <link rel="stylesheet" href="{{STATIC_URL}}css/estilos_buscar.css">
+        <link href='http://fonts.googleapis.com/css?family=Advent+Pro:400,500' rel='stylesheet'>
+
+        <script src="{{STATIC_URL}}js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+   
+    <body>
+
+   <div class="row-fluid">
+            <div class="span12 s1">
+               <img width='160px' height='120px' src="{{MEDIA_URL}}img/libros1.jpg" align="left">
+                <embed src="http://www.ecdotica.com/ads/banner-leal2.swf" width="728" height="90" flashvars=""><p id="title">COOMBOOK</p>
+   </div>
+
+<div class="row-fluid">
+<div class="span12">            
+ <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <a class="brand" href="#">ComBook</a>
+          <ul class="nav">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="/prueba">Noticias</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registro
+                 <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/registrar_categoria">Libro</a></li>
+              </ul>
+          </li>
+          </ul>
+          <div class="busqueda">
+            <form class="navbar-search pull-left" method="GET" action="/busca/">
+              {% csrf_token %}
+                <input type="text" name="q" class="search-query" placeholder="Buscar">
+                <div class="btn-group">
+                    <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                </div>
+            </form>
+                
+          </div>
+      </div>
+</div>
+</div>
+</div>
+  {% block content %}
+  {% endblock %}
+
+<footer>
+    <div class="row-fluid pie">
+        <div class="span3 pie">
+          <img class="i1"width='25px' height='3px' src="{{MEDIA_URL}}img/im2.jpg" ALIGN=MIDDLE>
+          <p id="parrafo"><strong>Visit</strong><br>Trujillo<br>Av Vera Enriquez 154</p>
+        </div>
+        <div class="span3 pie">
+          <img class="i2"width='25px' height='3px' src="{{MEDIA_URL}}img/im1.jpg" ALIGN=MIDDLE><p id="parrafo">
+          <p id="parrafo1"><strong>Call</strong><br>T:(44)-252051<br>F: 949173252</p>
+        </div>
+        <div class="span3 pie">
+          <img class="i3" width='40px' height='40px' src="{{MEDIA_URL}}img/im3.jpg" ALIGN=MIDDLE>
+          <p id="parrafo2"><strong>Contact</strong><br>http://qaysen.com</p><br>
+          <img class="it" src="{{MEDIA_URL}}img/im5.jpg"> <img class="if" src="{{MEDIA_URL}}img/im6.jpg"><img class="ig" src="{{MEDIA_URL}}img/im7.jpg">
+        </div>
+        <div class="span3 pie">
+          <img class="i4" width='30px' height='40px' src="{{MEDIA_URL}}img/im4.jpg" ALIGN=top>
+          <p id="parrafo3">All rights<br>reserved</p>
+        </div>
+    </div>
+    
+  </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{STATIC_URL}}js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+    <script src="{{STATIC_URL}}js/vendor/bootstrap.min.js"></script>
+
+    <script src="{{STATIC_URL}}js/main.js"></script>
+    {% block js %}
+
+    {% endblock %}
+</body>
+</html>

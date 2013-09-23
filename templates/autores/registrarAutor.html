@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registrar Autor</title>
+	<link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
+</head>
+<body>
+	<h1>Registrar Autor</h1>
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		 
+		{{form.as_p}}
+
+		 <input type="submit" value="Registrar">
+	</form>
+	
+	
+		
+</body>
+</html>
