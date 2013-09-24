@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'apps.inicio',
     'apps.autores',
+    'apps.libros',
 )
 
 
