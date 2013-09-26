@@ -12,8 +12,11 @@ urlpatterns = patterns('',
     url(r'^' , include('apps.inicio.urls')),
 
     #AUTORES
-
     url(r'^autor/' , include('apps.autores.urls')),
+
+    #LIBROS
+    url(r'^libros/' , include('apps.libros.urls')),
+
     
 
     url(r'^admin/', include(admin.site.urls)),

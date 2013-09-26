@@ -44,9 +44,9 @@
           </li>
           </ul>
           <div class="busqueda">
-            <form class="navbar-search pull-left" method="GET" action="/busca/">
-              {% csrf_token %}
-                <input type="text" name="q" class="search-query" placeholder="Buscar">
+            <form class="navbar-search pull-left" method="POST" action="/libros/buscar/">{% csrf_token %}
+
+                <input type="text" name="buscalo" class="search-query" placeholder="Buscar">
                 <div class="btn-group">
                     <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
                 </div>

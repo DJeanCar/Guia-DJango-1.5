@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	
+	{% if autor %}
+		{% for autor in autores %}
+			{{autor.nombre}}
+		{% endfor %}
+	{% else %}
+		{% for dato in datos %}
+			{% for libro,autor in dato.items %}
+				<label>NOmbre LIbro:</label>
+				{{libro.nombre}}
+				{% for a in autor %}
+					<label>Autor</label>{{a.nombre}}
+				{% endfor %}
+			{% endfor %}
+		{% endfor %}
+	{% endif %}
+{% endblock %}
